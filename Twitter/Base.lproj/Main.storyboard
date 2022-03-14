@@ -38,6 +38,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="00S-4X-afR" firstAttribute="centerX" secondItem="ha4-aX-DC7" secondAttribute="centerX" id="a7e-Xs-L9D"/>
+                            <constraint firstItem="00S-4X-afR" firstAttribute="centerX" secondItem="ha4-aX-DC7" secondAttribute="centerX" id="gmh-R1-IBy"/>
+                            <constraint firstItem="00S-4X-afR" firstAttribute="centerY" secondItem="ha4-aX-DC7" secondAttribute="centerY" id="vdn-LA-bKp"/>
                             <constraint firstItem="00S-4X-afR" firstAttribute="centerY" secondItem="ha4-aX-DC7" secondAttribute="centerY" id="w4r-Ur-nqL"/>
                         </constraints>
                     </view>
@@ -52,7 +54,7 @@
         <!--Home-->
         <scene sceneID="go2-qB-qqH">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="wCI-gU-rks" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="wCI-gU-rks" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="p9P-tX-ztO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +76,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="zZH-gs-Q0n">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="bXG-O2-wXf">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="wCI-gU-rks" id="qFM-wI-cEh"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -85,11 +90,14 @@
         <!--Navigation Controller-->
         <scene sceneID="Zgz-Ok-ZJ8">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="66y-0f-eci" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" interfaceStyle="light" id="66y-0f-eci" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cLl-jQ-AyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.4352964366" green="0.94769530909999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -100,6 +108,9 @@
                             <color key="backgroundColor" red="0.4352964366" green="0.94769530909999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </navigationBarAppearance>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GZY-er-unw">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="wCI-gU-rks" kind="relationship" relationship="rootViewController" id="KvF-Wu-BkB"/>
                     </connections>
